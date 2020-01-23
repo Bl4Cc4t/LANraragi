@@ -49,6 +49,6 @@ mkdir -p ${LRR_LOG_DIRECTORY}
 # @INC export
 export PERL5LIB="${workdir}/libexec/lib/perl5"
 
-# launch command
+# launch command 
 redis-server "${workdir}/redis.conf"
 npm start --prefix "${workdir}" && redis-cli shutdown
