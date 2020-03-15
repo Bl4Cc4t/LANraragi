@@ -8,7 +8,6 @@ requires 'Encode', 3.02;
 requires 'Archive::Extract::Libarchive', 0.38;
 requires 'Archive::Peek::Libarchive', 0.38;
 requires 'Digest::SHA', 6.02;
-requires 'Image::Magick', 6.89-1;
 
 # Web UI
 requires 'Sort::Naturally', 1.03;

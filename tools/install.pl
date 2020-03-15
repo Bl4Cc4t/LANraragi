@@ -117,7 +117,7 @@ say("Checking for Redis...");
 can_run('redis-server')
   or die 'NOT FOUND! Please install a Redis server before proceeding.';
 say("OK!");
-
+install_package("Image::Magick")
 #Check for PerlMagick
 say("Checking for ImageMagick/PerlMagick...");
 my $imgk;
