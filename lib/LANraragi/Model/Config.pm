@@ -10,11 +10,16 @@ use Mojolicious::Plugin::Config;
 use Mojo::Home;
 
 # Find the project root directory to load the conf file
-my $home = Mojo::Home->new;
-$home->detect;
+my $confdir = Mojo::Home->new;
+$confdir->detect;
+
+# LRR_CONFIG_DIRECTORY can overwrite the home dir
+if ($ENV{LRR_CONFIG_DIRECTORY}) {
+    $dir = $ENV{LRR_CONFIG_DIRECTORY};
+}
 
 my $config = Mojolicious::Plugin::Config->register( Mojolicious->new,
-    { file => $home . '/lrr.conf' } );
+    { file => $confdir . '/lrr.conf' } );
 
 #Address and port of your redis instance.
 sub get_redisad { return $config->{redis_address} }
